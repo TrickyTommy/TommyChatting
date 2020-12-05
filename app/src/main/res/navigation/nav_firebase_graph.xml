@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_daftarUserFragment"
+            app:destination="@id/daftarUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -27,4 +30,9 @@
         android:name="com.example.tommychatting.fragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/daftarUserFragment"
+        android:name="com.example.tommychatting.fragment.DaftarUserFragment"
+        android:label="fragment_daftar_user"
+        tools:layout="@layout/fragment_daftar_user" />
 </navigation>

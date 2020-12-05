@@ -45,6 +45,13 @@ class LoginFragment : Fragment() {
                         } else {
                             showToast("Belum Ferivikasi Email")
                         }
+                        it.user?.uid.let { uid ->
+                            if (uid != null) {
+                                localSession.uid = uid
+                            }
+                        }
+                        findNavController().navigate(R.id.action_loginFragment_to_daftarUserFragment)
+
 
                         showLoading(false)
                     }.addOnFailureListener {
@@ -60,10 +67,16 @@ class LoginFragment : Fragment() {
 
         return binding.root
     }
+    override fun onStart() {
+        super.onStart()
+
+        if (localSession.uid.isNotEmpty()) findNavController().navigate(R.id.action_loginFragment_to_daftarUserFragment)
+    }
 
     private fun showLoading(isLoading: Boolean) {
         binding.pbLoading.visibility = if (isLoading) View.VISIBLE else View.INVISIBLE
         binding.btnRegister.visibility = if (!isLoading) View.VISIBLE else View.INVISIBLE
+        binding.btnLogin.visibility = if (!isLoading) View.VISIBLE else View.GONE
     }
 
 
