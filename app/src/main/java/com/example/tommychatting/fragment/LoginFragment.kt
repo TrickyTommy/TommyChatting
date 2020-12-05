@@ -45,7 +45,7 @@ class LoginFragment : Fragment() {
                     ).addOnSuccessListener {
                         if (it.user?.isEmailVerified == true) {
 
-                            findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+                            findNavController().navigate(R.id.action_loginFragment_to_latestMessageFragment2)
                         } else {
                             showToast("Belum Ferivikasi Email")
                         }

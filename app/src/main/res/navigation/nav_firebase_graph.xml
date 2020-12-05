@@ -14,9 +14,6 @@
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_latestMessageFragment2"
             app:destination="@id/latestMessageFragment" />
     </fragment>
@@ -25,11 +22,6 @@
         android:name="com.example.tommychatting.fragment.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.tommychatting.fragment.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/latestMessageFragment"
         android:name="com.example.tommychatting.fragment.latestMessageFragment"
