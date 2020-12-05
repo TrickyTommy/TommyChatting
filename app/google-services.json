@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "290852562611",
+    "project_id": "tommychat-a7c94",
+    "storage_bucket": "tommychat-a7c94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290852562611:android:f77398f12463ea85e172c6",
+        "android_client_info": {
+          "package_name": "com.example.tommychatting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290852562611-qudbqihhgbqq5v87pk27a134ml1c4qs8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tommychatting",
+            "certificate_hash": "c35bd7b081d4f7a6ae6abf00c9a3347696fa7442"
+          }
+        },
+        {
+          "client_id": "290852562611-d935su0fa6ck5pev3d6310bqfs5h12bo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNY40u4W5oMBREoN8P3NEtuEQVCYHm9D4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290852562611-d935su0fa6ck5pev3d6310bqfs5h12bo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
