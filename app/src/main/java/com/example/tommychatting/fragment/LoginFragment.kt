@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.tommychatting.ConstantUtil
 import com.example.tommychatting.LocalSession
 import com.example.tommychatting.R
 import com.example.tommychatting.databinding.FragmentLoginBinding
+import com.example.tommychatting.model.UserModel
 import com.example.tommychatting.utils.showToast
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -41,6 +44,7 @@ class LoginFragment : Fragment() {
                         tiePassword.text.toString()
                     ).addOnSuccessListener {
                         if (it.user?.isEmailVerified == true) {
+
                             findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
                         } else {
                             showToast("Belum Ferivikasi Email")
@@ -50,7 +54,24 @@ class LoginFragment : Fragment() {
                                 localSession.uid = uid
                             }
                         }
-                        findNavController().navigate(R.id.action_loginFragment_to_daftarUserFragment)
+                        it.user?.uid?.let { uid ->
+                            localSession.uid = uid
+
+                            db.collection(ConstantUtil.COLLECTION).document(uid)
+                                .set(UserModel(uid, tieEmail.text.toString()))
+                                .addOnSuccessListener {
+                                    showLoading(false)
+
+                                    showToast( "ada suatu kesalahan")
+
+                                }.addOnFailureListener { exc ->
+                                    exc.printStackTrace()
+
+                                    showLoading(false)
+                                }
+                        }
+
+
 
 
                         showLoading(false)
@@ -59,18 +80,19 @@ class LoginFragment : Fragment() {
                         showToast(it.message ?: "oop sesuatu bermasalah")
                         showLoading(false)
                     }
-                    }else{
-                        showToast("Tidak boleh kosong")
+                } else {
+                    showToast("Tidak boleh kosong")
                 }
             }
         }
 
         return binding.root
     }
+
     override fun onStart() {
         super.onStart()
 
-        if (localSession.uid.isNotEmpty()) findNavController().navigate(R.id.action_loginFragment_to_daftarUserFragment)
+        if (localSession.uid.isNotEmpty()) findNavController().navigate(R.id.action_loginFragment_to_latestMessageFragment2)
     }
 
     private fun showLoading(isLoading: Boolean) {

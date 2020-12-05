@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_firebase_graph.xml"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/latestMessageFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -17,8 +17,8 @@
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_daftarUserFragment"
-            app:destination="@id/daftarUserFragment" />
+            android:id="@+id/action_loginFragment_to_latestMessageFragment2"
+            app:destination="@id/latestMessageFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -31,8 +31,24 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
     <fragment
-        android:id="@+id/daftarUserFragment"
-        android:name="com.example.tommychatting.fragment.DaftarUserFragment"
-        android:label="fragment_daftar_user"
-        tools:layout="@layout/fragment_daftar_user" />
+        android:id="@+id/latestMessageFragment"
+        android:name="com.example.tommychatting.fragment.latestMessageFragment"
+        android:label="fragment_latest_message"
+        tools:layout="@layout/fragment_latest_message" >
+        <action
+            android:id="@+id/action_latestMessageFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_latestMessageFragment_to_newMessageFragment"
+            app:destination="@id/newMessageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newMessageFragment"
+        android:name="com.example.tommychatting.fragment.NewMessageFragment"
+        android:label="fragment_new_message"
+        tools:layout="@layout/fragment_new_message" >
+        <action
+            android:id="@+id/action_newMessageFragment_to_latestMessageFragment"
+            app:destination="@id/latestMessageFragment" />
+    </fragment>
 </navigation>

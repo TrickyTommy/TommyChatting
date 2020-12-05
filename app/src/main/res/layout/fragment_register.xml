@@ -5,18 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAuthentication"
+    android:keepScreenOn="true"
     tools:context=".fragment.RegisterFragment">
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/logo_contact"
+        android:id="@+id/button_photo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/round_select_photo"
+        android:text="Select Photo"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_signin"
@@ -26,6 +34,7 @@
         android:text="Sign In"
         android:textColor="@color/white"
         android:textSize="25sp"
+
         app:layout_constraintStart_toEndOf="@+id/tv_signin2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +57,7 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/button_photo"
         app:startIconDrawable="@drawable/ic_name"
         app:startIconTint="@color/white">
 
@@ -116,6 +125,7 @@
         android:background="@color/colorDanger"
         android:text="register"
         app:layout_constraintTop_toBottomOf="@id/password" />
+
     <ProgressBar
         android:id="@+id/pb_loading"
         android:layout_width="wrap_content"
@@ -126,4 +136,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/select_foto_image"
+        app:civ_border_width="4dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_photo"
+        app:layout_constraintStart_toStartOf="@+id/button_photo"
+        app:layout_constraintTop_toTopOf="@+id/button_photo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
