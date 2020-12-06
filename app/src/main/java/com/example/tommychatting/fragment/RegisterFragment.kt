@@ -120,13 +120,15 @@ class RegisterFragment : Fragment() {
             imageUri = data.data
             val bitmap = MediaStore.Images.Media.getBitmap(activity?.contentResolver, imageUri)
 
+            val bitmapDrawable = BitmapDrawable(bitmap)
             val img = binding.selectFotoImage
-            img.setImageBitmap(bitmap)
+            img.setImageDrawable(bitmapDrawable)
             img.alpha = 0f
 
 
-//            val bitmapDrawable = BitmapDrawable(bitmap)
-//            binding.buttonPhoto.setImageDrawable(bitmapDrawable)
+
+
+            binding.buttonPhoto.setImageDrawable(bitmapDrawable)
         }
 
 
