@@ -122,7 +122,7 @@ class RegisterFragment : Fragment() {
 
             val img = binding.selectFotoImage
             img.setImageBitmap(bitmap)
-            img.alpha = 0f
+
 
 
 //            val bitmapDrawable = BitmapDrawable(bitmap)

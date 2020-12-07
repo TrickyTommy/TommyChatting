@@ -45,7 +45,7 @@ class LoginFragment : Fragment() {
                     ).addOnSuccessListener {
                         if (it.user?.isEmailVerified == true) {
 
-                            findNavController().navigate(R.id.action_loginFragment_to_latestMessageFragment2)
+                            findNavController().navigate(R.id.action_loginFragment_to_newMessageFragment)
                         } else {
                             showToast("Belum Ferivikasi Email")
                         }
@@ -89,11 +89,11 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    override fun onStart() {
-        super.onStart()
-
-        if (localSession.uid.isNotEmpty()) findNavController().navigate(R.id.action_loginFragment_to_latestMessageFragment2)
-    }
+//    override fun onStart() {
+//        super.onStart()
+//
+//        if (localSession.uid.isNotEmpty()) findNavController().navigate(R.id.action_loginFragment_to_newMessageFragment)
+//    }
 
     private fun showLoading(isLoading: Boolean) {
         binding.pbLoading.visibility = if (isLoading) View.VISIBLE else View.INVISIBLE
